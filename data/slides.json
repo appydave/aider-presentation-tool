@@ -1,0 +1,21 @@
+[
+    {
+        "h1": "Welcome to the Presentation",
+        "h2": "Using Reveal.js with Custom Styling",
+        "svg": "<svg width='200' height='200' viewBox='0 0 200 200'><circle cx='100' cy='100' r='90' fill='#ffde59'/></svg>",
+        "bullets": [
+            "Custom themed presentation",
+            "Consistent styling across slides",
+            "SVG support with flexible layouts"
+        ]
+    },
+    {
+        "h1": "Sample Slide with Image",
+        "image": "sample.svg",
+        "bullets": [
+            "External SVG file example",
+            "Demonstrates image loading",
+            "Maintains consistent styling"
+        ]
+    }
+]
