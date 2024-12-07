@@ -8,9 +8,16 @@ White #ffffff
 
 
 :root {
-    --background-color: #342d2d;
-    --text-color: #ccba9d;
-    --highlight-color: #ffde59;
+    --brand-dark: #342d2d;
+    --brand-light: #ccba9d;
+    --brand-highlight: #ffde59;
+    --black: #000000;
+    --white: #ffffff;
+    
+    /* Using the brand colors as functional variables */
+    --background-color: var(--brand-dark);
+    --text-color: var(--brand-light);
+    --highlight-color: var(--brand-highlight);
 }
 
 .reveal {
