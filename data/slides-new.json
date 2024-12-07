@@ -37,6 +37,21 @@
         "date": "MARCH 20, 2020",
         "footer": "A Pitch Deck by McDowell Digital Media, Inc."
       }
+    },
+    {
+      "template": "template5",
+      "data": {
+        "title": "TODAY'S PRESENTATION",
+        "topics": [
+          "About our company",
+          "Social media services", 
+          "Problem/opportunity",
+          "Our solution",
+          "Plan execution",
+          "Our team"
+        ],
+        "image": "docs/template-example-appydave/2.jpg"
+      }
     }
   ]
 }
