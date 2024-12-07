@@ -52,6 +52,24 @@
         ],
         "image": "docs/template-example-appydave/2.jpg"
       }
+    },
+    {
+      "template": "template6",
+      "data": {
+        "name": "BYRON OLTARIA",
+        "title": "CEO OF MCDOWELL DIGITAL MEDIA, INC.",
+        "roles": [
+          {
+            "position": "Social Media Strategist",
+            "description": "Presentations are communication tools that can be used as lectures."
+          },
+          {
+            "position": "Marketing Expert", 
+            "description": "Presentations are communication tools that can be used as lectures."
+          }
+        ],
+        "image": "docs/template-example-appydave/3.jpg"
+      }
     }
   ]
 }
