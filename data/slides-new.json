@@ -28,6 +28,15 @@
         "bottom-left": "<svg xmlns='http://www.w3.org/2000/svg'><rect x='10' y='10' width='80' height='80' fill='green'/></svg>",
         "bottom-right": "<svg xmlns='http://www.w3.org/2000/svg'><polygon points='50,10 90,50 50,90 10,50' fill='yellow'/></svg>"
       }
+    },
+    {
+      "template": "template4",
+      "data": {
+        "title": "SOCIAL MEDIA",
+        "subtitle": "STRATEGY",
+        "date": "MARCH 20, 2020",
+        "footer": "A Pitch Deck by McDowell Digital Media, Inc."
+      }
     }
   ]
 }
