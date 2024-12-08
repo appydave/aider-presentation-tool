@@ -142,25 +142,55 @@ White #ffffff
     transform: scale(1.02);
 }
 
-/* Template 4 - Title with Footer */
+/* Template 4 - Split Design with Date */
 .template-4 {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    padding: 2em;
+    height: 100vh;
+    padding: 0;
+    background: linear-gradient(to bottom, var(--white) 50%, var(--brand-light) 50%);
+    position: relative;
+}
+
+.template-4 .slide {
+    padding: 2em 4em;
+    height: 100%;
 }
 
 .template-4 h1 {
-    font-size: 3.5em;
-    color: var(--brand-highlight);
+    font-size: 5em;
+    color: var(--black);
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.template-4 h2 {
+    color: var(--black);
+}
+
+.template-4 p {
+    position: absolute;
+    top: 2rem;
+    right: 4rem;
+    color: var(--black);
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 1.2em;
+    margin: 0;
 }
 
 .template-4 footer {
-    margin-top: auto;
-    padding: 1em;
-    border-top: 2px solid var(--brand-light);
-    color: var(--brand-light);
-    font-size: 0.9em;
+    position: absolute;
+    bottom: 2rem;
+    left: 4rem;
+    color: var(--black);
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 1em;
 }
 
 /* Template 5 - Content with Image */
