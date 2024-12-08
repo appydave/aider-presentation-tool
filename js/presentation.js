@@ -9,6 +9,8 @@ class Template {
     }
 }
 
+// Can you make sure that the template HTML includes a template-{number} class on each section AI!
+
 // Template implementations
 class Template1 extends Template {
     render() {
@@ -135,7 +137,7 @@ class Presentation {
 
     async loadPresentation() {
         try {
-            const response = await fetch('data/slides.json');
+            const response = await fetch('data/slides-new.json');
             const data = await response.json();
             
             data.slides.forEach(slide => {
