@@ -202,22 +202,66 @@ White #ffffff
     font-size: 1em;
 }
 
-/* Template 5 - Content with Image */
+/* Template 5 - Today's Presentation Layout */
 .template-5 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2em;
-    padding: 2em;
+    gap: 4em;
+    padding: 0;
+    background-color: var(--brand-dark);
+    position: relative;
+}
+
+.template-5::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15%;
+    height: 100%;
+    background-color: var(--brand-highlight);
+}
+
+.template-5 .slide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4em;
+    padding: 4em;
+    margin-left: 15%;
 }
 
 .template-5 img {
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.template-5 h1 {
+    font-size: 3.5em;
+    color: var(--white);
+    margin-bottom: 1.5em;
+}
+
+.template-5 h2 {
+    font-size: 2em;
+    color: var(--brand-highlight);
+    margin-bottom: 1em;
 }
 
 .template-5 ul {
-    margin: 1em 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.template-5 ul li {
+    color: var(--white);
+    font-size: 1.4em;
+    margin-bottom: 1em;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 300;
 }
 
 /* Template 6 - Speaker Profile */
