@@ -75,11 +75,16 @@ class Template5 extends Template {
         return `
             <section class="template-5">
                 <div class="slide">
-                    <h1>${this.data.title}</h1>
-                    <ul>
-                        ${this.data.topics.map(topic => `<li>${topic}</li>`).join('')}
-                    </ul>
-                    <img src="${this.data.image}" alt="Presentation Image">
+                    <div class="image-container">
+                        <img src="${this.data.image}" alt="Presentation Image">
+                    </div>
+                    <div class="content">
+                        <h1>${this.data.title}</h1>
+                        <h2>${this.data.subHeading}</h2>
+                        <ul>
+                            ${this.data.topics.map(topic => `<li>${topic}</li>`).join('')}
+                        </ul>
+                    </div>
                 </div>
             </section>
         `;

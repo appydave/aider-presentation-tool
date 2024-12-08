@@ -205,37 +205,40 @@ White #ffffff
 /* Template 5 - Today's Presentation Layout */
 .template-5 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4em;
+    grid-template-columns: 45% 55%;
     padding: 0;
     background-color: var(--brand-dark);
     position: relative;
 }
 
-.template-5::before {
+.template-5 .slide {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    padding: 2em;
+}
+
+.template-5 .image-container {
+    position: relative;
+    padding: 2em;
+}
+
+.template-5 .image-container::before {
     content: '';
     position: absolute;
     left: 0;
     top: 0;
-    width: 15%;
+    width: 100%;
     height: 100%;
     background-color: var(--brand-highlight);
-}
-
-.template-5 .slide {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4em;
-    padding: 4em;
-    margin-left: 15%;
+    z-index: 1;
 }
 
 .template-5 img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
-    border-radius: 0;
-    box-shadow: none;
+    position: relative;
+    z-index: 2;
 }
 
 .template-5 h1 {
