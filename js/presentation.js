@@ -9,13 +9,11 @@ class Template {
     }
 }
 
-// Can you make sure that the template HTML includes a template-{number} class on each section AI!
-
 // Template implementations
 class Template1 extends Template {
     render() {
         return `
-            <section>
+            <section class="template-1">
                 <div class="slide">
                     <h1>${this.data['main-heading']}</h1>
                     <h2>${this.data['sub-heading']}</h2>
@@ -28,7 +26,7 @@ class Template1 extends Template {
 class Template2 extends Template {
     render() {
         return `
-            <section>
+            <section class="template-2">
                 <div class="slide">
                     <h1>${this.data.h1}</h1>
                     <h2>${this.data.h2}</h2>
@@ -45,7 +43,7 @@ class Template2 extends Template {
 class Template3 extends Template {
     render() {
         return `
-            <section>
+            <section class="template-3">
                 <div class="slide grid">
                     <div class="top-left">${this.data['top-left']}</div>
                     <div class="top-right">${this.data['top-right']}</div>
@@ -60,7 +58,7 @@ class Template3 extends Template {
 class Template4 extends Template {
     render() {
         return `
-            <section>
+            <section class="template-4">
                 <div class="slide">
                     <h1>${this.data.title}</h1>
                     <h2>${this.data.subtitle}</h2>
@@ -75,7 +73,7 @@ class Template4 extends Template {
 class Template5 extends Template {
     render() {
         return `
-            <section>
+            <section class="template-5">
                 <div class="slide">
                     <h1>${this.data.title}</h1>
                     <ul>
@@ -91,7 +89,7 @@ class Template5 extends Template {
 class Template6 extends Template {
     render() {
         return `
-            <section>
+            <section class="template-6">
                 <div class="slide">
                     <h1>${this.data.name}</h1>
                     <h2>${this.data.title}</h2>
