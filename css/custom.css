@@ -220,13 +220,16 @@ White #ffffff
 .template-5 .image-container {
     position: relative;
     padding: 2em;
+    aspect-ratio: 1;
+    width: 100%;
+    max-width: 500px;
 }
 
 .template-5 .image-container::before {
     content: '';
     position: absolute;
-    left: 0;
-    top: 0;
+    left: -15px;
+    top: -15px;
     width: 100%;
     height: 100%;
     background-color: var(--brand-highlight);
