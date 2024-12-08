@@ -226,9 +226,9 @@ White #ffffff
 
 .template-5 .yellow-frame {
     position: absolute;
-    left: -15px;
+    left: -30px;
     top: -15px;
-    width: 100%;
+    width: calc(100% - 15px);
     height: 100%;
     background-color: var(--brand-highlight);
     z-index: 1;
