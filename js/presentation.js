@@ -75,8 +75,11 @@ class Template5 extends Template {
         return `
             <section class="template-5">
                 <div class="slide">
-                    <div class="image-container">
-                        <img src="${this.data.image}" alt="Presentation Image">
+                    <div class="image-section">
+                        <div class="yellow-frame"></div>
+                        <div class="image-container">
+                            <img src="${this.data.image}" alt="Presentation Image">
+                        </div>
                     </div>
                     <div class="content">
                         <h1>${this.data.title}</h1>
