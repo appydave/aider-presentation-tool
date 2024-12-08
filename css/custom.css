@@ -72,5 +72,148 @@ White #ffffff
     height: auto;
 }
 
+/* Template 1 - Modern Hero Layout */
+.template-1 {
+    text-align: center;
+    padding: 2em;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, rgba(52, 45, 45, 0.9) 100%);
+}
+
+.template-1 h1 {
+    font-size: 4em;
+    color: var(--brand-highlight);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 0.2em;
+}
+
+.template-1 h2 {
+    font-size: 2.5em;
+    color: var(--brand-light);
+    opacity: 0.9;
+}
+
+/* Template 2 - Content with Bullets */
+.template-2 {
+    padding: 2em;
+    background: radial-gradient(circle at top right, rgba(204, 186, 157, 0.1) 0%, rgba(52, 45, 45, 0.95) 100%);
+}
+
+.template-2 h1 {
+    color: var(--brand-highlight);
+    margin-bottom: 0.5em;
+}
+
+.template-2 ul {
+    margin-top: 1em;
+}
+
+.template-2 li {
+    color: var(--brand-light);
+    font-size: 1.2em;
+    margin-bottom: 0.8em;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.template-2 li::before {
+    content: "•";
+    color: var(--brand-highlight);
+    position: absolute;
+    left: 0;
+}
+
+/* Template 3 - Grid Layout */
+.template-3 .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
+    padding: 2em;
+}
+
+.template-3 .grid > div {
+    background: rgba(204, 186, 157, 0.1);
+    padding: 2em;
+    border-radius: 10px;
+    border: 1px solid var(--brand-light);
+    transition: transform 0.3s ease;
+}
+
+.template-3 .grid > div:hover {
+    transform: scale(1.02);
+}
+
+/* Template 4 - Title with Footer */
+.template-4 {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 2em;
+}
+
+.template-4 h1 {
+    font-size: 3.5em;
+    color: var(--brand-highlight);
+}
+
+.template-4 footer {
+    margin-top: auto;
+    padding: 1em;
+    border-top: 2px solid var(--brand-light);
+    color: var(--brand-light);
+    font-size: 0.9em;
+}
+
+/* Template 5 - Content with Image */
+.template-5 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    padding: 2em;
+}
+
+.template-5 img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.template-5 ul {
+    margin: 1em 0;
+}
+
+/* Template 6 - Speaker Profile */
+.template-6 {
+    text-align: center;
+    padding: 2em;
+}
+
+.template-6 img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid var(--brand-highlight);
+    margin: 1em auto;
+}
+
+.template-6 .roles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+.template-6 .roles > div {
+    background: rgba(204, 186, 157, 0.1);
+    padding: 1em;
+    border-radius: 8px;
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+
+.template-6 h3 {
+    color: var(--brand-highlight);
+    margin-bottom: 0.5em;
+}
 
 
