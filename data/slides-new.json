@@ -50,7 +50,7 @@
           "Plan execution",
           "Our team"
         ],
-        "image": "docs/template-example-appydave/2.jpg"
+        "image": "assets/computer.jpg"
       }
     },
     {
@@ -68,7 +68,7 @@
             "description": "Presentations are communication tools that can be used as lectures."
           }
         ],
-        "image": "docs/template-example-appydave/3.jpg"
+        "image": "assets/girl.jpg"
       }
     }
   ]
