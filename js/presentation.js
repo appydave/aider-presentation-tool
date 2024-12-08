@@ -1,65 +1,146 @@
-class PresentationBuilder {
-    constructor(container) {
-        this.container = container;
+// Base Template class
+class Template {
+    constructor(data) {
+        this.data = data;
     }
 
-    createSlide(slideData) {
-        const section = document.createElement('section');
-        const content = document.createElement('div');
-        content.className = 'slide-content';
+    render() {
+        throw new Error('Render method must be implemented by subclasses');
+    }
+}
 
-        // Add headings
-        if (slideData.h1) {
-            const h1 = document.createElement('h1');
-            h1.textContent = slideData.h1;
-            content.appendChild(h1);
+// Template implementations
+class Template1 extends Template {
+    render() {
+        return `
+            <section>
+                <div class="slide">
+                    <h1>${this.data['main-heading']}</h1>
+                    <h2>${this.data['sub-heading']}</h2>
+                </div>
+            </section>
+        `;
+    }
+}
+
+class Template2 extends Template {
+    render() {
+        return `
+            <section>
+                <div class="slide">
+                    <h1>${this.data.h1}</h1>
+                    <h2>${this.data.h2}</h2>
+                    <h3>${this.data.h3}</h3>
+                    <ul>
+                        ${this.data.bullets.map(bullet => `<li>${bullet}</li>`).join('')}
+                    </ul>
+                </div>
+            </section>
+        `;
+    }
+}
+
+class Template3 extends Template {
+    render() {
+        return `
+            <section>
+                <div class="slide grid">
+                    <div class="top-left">${this.data['top-left']}</div>
+                    <div class="top-right">${this.data['top-right']}</div>
+                    <div class="bottom-left">${this.data['bottom-left']}</div>
+                    <div class="bottom-right">${this.data['bottom-right']}</div>
+                </div>
+            </section>
+        `;
+    }
+}
+
+class Template4 extends Template {
+    render() {
+        return `
+            <section>
+                <div class="slide">
+                    <h1>${this.data.title}</h1>
+                    <h2>${this.data.subtitle}</h2>
+                    <p>${this.data.date}</p>
+                    <footer>${this.data.footer}</footer>
+                </div>
+            </section>
+        `;
+    }
+}
+
+class Template5 extends Template {
+    render() {
+        return `
+            <section>
+                <div class="slide">
+                    <h1>${this.data.title}</h1>
+                    <ul>
+                        ${this.data.topics.map(topic => `<li>${topic}</li>`).join('')}
+                    </ul>
+                    <img src="${this.data.image}" alt="Presentation Image">
+                </div>
+            </section>
+        `;
+    }
+}
+
+class Template6 extends Template {
+    render() {
+        return `
+            <section>
+                <div class="slide">
+                    <h1>${this.data.name}</h1>
+                    <h2>${this.data.title}</h2>
+                    ${this.data.roles.map(role => `
+                        <div>
+                            <h3>${role.position}</h3>
+                            <p>${role.description}</p>
+                        </div>
+                    `).join('')}
+                    <img src="${this.data.image}" alt="Speaker Image">
+                </div>
+            </section>
+        `;
+    }
+}
+
+// Main Presentation class
+class Presentation {
+    constructor(containerId) {
+        this.container = document.getElementById(containerId);
+        if (!this.container) {
+            throw new Error(`Container with ID "${containerId}" not found`);
         }
 
-        if (slideData.h2) {
-            const h2 = document.createElement('h2');
-            h2.textContent = slideData.h2;
-            content.appendChild(h2);
-        }
+        this.templateMap = {
+            'template1': Template1,
+            'template2': Template2,
+            'template3': Template3,
+            'template4': Template4,
+            'template5': Template5,
+            'template6': Template6,
+        };
+    }
 
-        // Add SVG content
-        if (slideData.svg || slideData.image) {
-            const svgContainer = document.createElement('div');
-            svgContainer.className = 'svg-container';
-            
-            if (slideData.svg) {
-                svgContainer.innerHTML = slideData.svg;
-            } else if (slideData.image) {
-                const img = document.createElement('img');
-                img.src = `assets/svgs/${slideData.image}`;
-                svgContainer.appendChild(img);
-            }
-            
-            content.appendChild(svgContainer);
+    renderSlide(slide) {
+        const TemplateClass = this.templateMap[slide.template];
+        if (!TemplateClass) {
+            throw new Error(`Unknown template: ${slide.template}`);
         }
-
-        // Add bullet points
-        if (slideData.bullets && slideData.bullets.length > 0) {
-            const ul = document.createElement('ul');
-            slideData.bullets.forEach(bullet => {
-                const li = document.createElement('li');
-                li.textContent = bullet;
-                ul.appendChild(li);
-            });
-            content.appendChild(ul);
-        }
-
-        section.appendChild(content);
-        return section;
+        const templateInstance = new TemplateClass(slide.data);
+        return templateInstance.render();
     }
 
     async loadPresentation() {
         try {
             const response = await fetch('data/slides.json');
-            const slides = await response.json();
+            const data = await response.json();
             
-            slides.forEach(slideData => {
-                const slide = this.createSlide(slideData);
-                this.container.appendChild(slide);
+            data.slides.forEach(slide => {
+                const slideHTML = this.renderSlide(slide);
+                this.container.innerHTML += slideHTML;
             });
 
             // Initialize Reveal.js
@@ -72,7 +153,6 @@ class PresentationBuilder {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('presentation-container');
-    const presentation = new PresentationBuilder(container);
+    const presentation = new Presentation('presentation-container');
     presentation.loadPresentation();
 });
